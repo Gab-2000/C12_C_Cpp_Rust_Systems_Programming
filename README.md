@@ -41,21 +41,21 @@ The project addresses the following objectives:
 The code examples are organized by **language** and **concept**, with each file being a standalone program:
 
 code/
-├── C/
-│ ├── abstraction.c
-│ ├── error_handling.c
-│ ├── memory.c
-│ └── pointers.c
-├── Cpp/
-│ ├── abstraction.cpp
-│ ├── error_handling.cpp
-│ ├── memory.cpp
-│ └── pointers.cpp
-└── Rust/
-├── abstraction.rs
-├── error_handling.rs
-├── memory.rs
-└── pointers.rs
+├── c/
+│   ├── abstraction.c
+│   ├── error_handling.c
+│   ├── memory.c
+│   └── pointers.c
+├── cpp/
+│   ├── abstraction.cpp
+│   ├── error_handling.cpp
+│   ├── memory.cpp
+│   └── pointers.cpp
+└── rust/
+    ├── abstraction.rs
+    ├── error_handling.rs
+    ├── memory.rs
+    └── pointers.rs
 
 Each example demonstrates how the **same low-level problem** is addressed differently in C, C++, and Rust.
 
