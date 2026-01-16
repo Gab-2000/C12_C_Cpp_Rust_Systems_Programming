@@ -110,3 +110,26 @@ All AI-generated content was **manually reviewed and validated**.
 By combining manual inspection, modern best practices, and compiler guarantees, the project ensures that both explanations and code accurately reflect real-world systems programming behavior.
 
 Detailed documentation of AI prompts and validation methodology is provided in the accompanying project report.
+
+## Build and Run
+
+Each example is a standalone program and can be compiled independently.
+
+### C
+
+```bash
+cd code/c
+gcc memory.c -std=c11 -Wall -Wextra -o memory
+./memory
+
+C++
+cd code/cpp
+g++ memory.cpp -std=c++20 -Wall -Wextra -o memory
+./memory
+
+Rust
+Rust examples are single-file programs and can be compiled directly with rustc
+cd code/rust
+rustc memory.rs
+./memory
+
