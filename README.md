@@ -121,15 +121,19 @@ Each example is a standalone program and can be compiled independently.
 cd code/c
 gcc memory.c -std=c11 -Wall -Wextra -o memory
 ./memory
+```
+###C++
 
-C++
+```bash
 cd code/cpp
 g++ memory.cpp -std=c++20 -Wall -Wextra -o memory
 ./memory
-
-Rust
+```
+###Rust
+```bash
 Rust examples are single-file programs and can be compiled directly with rustc
 cd code/rust
 rustc memory.rs
 ./memory
+```
 
