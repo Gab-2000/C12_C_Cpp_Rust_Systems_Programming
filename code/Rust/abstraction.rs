@@ -1,5 +1,5 @@
 // Rust: abstraction via generics
-fn max_t<T: Ord>(a: T, b: T) -> T {
+fn max_t<T: Ord>(a: T, b: T) -> T { // T must implement Ord trait
     if a > b { a } else { b }
 }
 

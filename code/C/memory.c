@@ -3,16 +3,15 @@
 #include <stdlib.h>
 
 int main() {
-    int *p = malloc(sizeof *p);
-    if (!p) return 1;
+    int *p = malloc(sizeof *p); 
+    if (!p) return 1; // Must in C to handle allocation failure
 
     *p = 42;
     printf("value=%d\n", *p);
 
-    free(p);
+    free(p); // Manually free memory to prevent leaks
 
     // Using p after free would be undefined behavior
-    // printf("%d\n", *p);
     return 0;
 }
 

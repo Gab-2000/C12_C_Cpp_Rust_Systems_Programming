@@ -1,15 +1,20 @@
-// C++: abstraction via templates
 #include <iostream>
 
-template<typename T>
+// C++ abstraction: templates (type-checked at compile time)
+template <typename T>
 T max_t(T a, T b) {
     return (a > b) ? a : b;
 }
-
 int main() {
-    std::cout << "max=" << max_t(3, 5) << "\n";
+    // ✅ Safe abstraction: no macro expansion, no double evaluation
+    int x = 10, y = 5;
+    int r = max_t(++x, y);   // ++x evaluated once
+    std::cout << "x=" << x << ", result=" << r << "\n";
+
+    // ⚠️ Still allowed in C++: raw pointer misuse
+    int* p = new int(5);
+    delete p;        // memory freed
+    *p = 10;         // ❌ dangling pointer (undefined behavior)
+
     return 0;
 }
-
-/* Templates provide strong type safety and zero-cost abstraction while avoiding macro pitfalls.
-Errors are detected at compile time. */
