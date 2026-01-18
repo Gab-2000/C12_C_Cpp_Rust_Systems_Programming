@@ -56,6 +56,7 @@ code/
     ├── error_handling.rs
     ├── memory.rs
     └── pointers.rs
+```
 
 Each example demonstrates how the **same low-level problem** is addressed differently in C, C++, and Rust.
 
