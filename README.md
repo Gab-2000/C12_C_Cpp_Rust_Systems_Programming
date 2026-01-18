@@ -1,114 +1,143 @@
-# C12 – C, C++, and Rust: A Comparative Study of Systems Programming Models
+C12 – C, C++, and Rust: A Comparative Study of Systems Programming Models
+Overview
 
-## Overview
+This repository accompanies the C12 project for the Advanced Programming course.
+The project presents a comparative study of C, C++, and Rust as systems programming languages.
 
-This repository accompanies the **C12 project**, a comparative study of **C, C++, and Rust** as systems programming languages.
+The analysis focuses on how each language approaches fundamental systems-level concerns, including:
 
-The project analyzes how each language approaches:
+Memory management and lifetimes
 
-- Memory management and lifetimes
-- Pointer usage and low-level access
-- Type systems and abstraction mechanisms
-- Safety guarantees and undefined behavior
-- Compilation models and performance trade-offs
+Pointer usage and low-level access
 
-The goal is **not to rank the languages**, but to clearly explain **what each language allows, prevents, or enforces** at the systems level.
+Type systems and abstraction mechanisms
 
----
+Safety guarantees and undefined behavior
 
-## Project Goals
+Compilation models and performance trade-offs
 
-The project addresses the following objectives:
+The goal of the project is not to rank the languages, but to clearly explain what each language allows, prevents, or enforces at the systems programming level.
 
-1. **Theoretical analysis**  
-   Explain the key differences among C, C++, and Rust, focusing on memory management, safety guarantees, type systems, and compilation models.
+Project Structure
 
-2. **Practical comparison**  
-   Provide short, focused code examples in all three languages that illustrate contrasting behaviors for:
+The project is divided into two main parts, reflected in both the report and the repository:
 
-   - Memory allocation and lifetimes
-   - Pointer manipulation
-   - Error handling
-   - Abstraction mechanisms (macros, templates, generics)
+Part 1 – Theoretical Analysis
 
-3. **Methodology and verification**  
-   Document the AI prompts used during development and explain how the correctness of explanations and code was verified, with particular attention to safety properties and undefined behavior.
+A structured comparison of C, C++, and Rust, covering:
 
----
+Memory management models
 
-## Repository Structure
-The code examples are organized by **language** and **concept**, with each file being a standalone program:
+Type systems and abstraction capabilities
 
-```text
+Safety guarantees and sources of undefined behavior
+
+Compilation models and design trade-offs
+
+This analysis is documented in the accompanying project report.
+
+Part 2 – Practical Code Examples
+
+Minimal, focused code examples that demonstrate how the same low-level problems are handled differently in each language.
+
+Project Structure
+
+The project is divided into two main parts, reflected in both the report and the repository:
+
+Part 1 – Theoretical Analysis
+
+A structured comparison of C, C++, and Rust, covering:
+
+Memory management models
+
+Type systems and abstraction capabilities
+
+Safety guarantees and sources of undefined behavior
+
+Compilation models and design trade-offs
+
+This analysis is documented in the accompanying project report.
+
+Part 2 – Practical Code Examples
+
+Minimal, focused code examples that demonstrate how the same low-level problems are handled differently in each language.
+
 code/
 ├── c/
-│   ├── abstraction.c
-│   ├── error_handling.c
-│   ├── memory.c
-│   └── pointers.c
+│ ├── abstraction.c
+│ ├── error_handling.c
+│ ├── memory.c
+│ └── pointers.c
 ├── cpp/
-│   ├── abstraction.cpp
-│   ├── error_handling.cpp
-│   ├── memory.cpp
-│   └── pointers.cpp
+│ ├── abstraction.cpp
+│ ├── error_handling.cpp
+│ ├── memory.cpp
+│ └── pointers.cpp
 └── rust/
-    ├── abstraction.rs
-    ├── error_handling.rs
-    ├── memory.rs
-    └── pointers.rs
-```
+├── abstraction.rs
+├── error_handling.rs
+├── memory.rs
+└── pointers.rs
 
-Each example demonstrates how the **same low-level problem** is addressed differently in C, C++, and Rust.
+Each example addresses the same conceptual problem across the three languages to enable direct comparison.
 
----
+Conceptual Summary (Report – Part 1)
 
-## Conceptual Summary (Part 1)
+C provides maximum low-level control with minimal built-in safety. Memory management and correctness rely entirely on programmer discipline, and undefined behavior is an explicit part of the language model.
 
-- **C** provides maximum low-level control with minimal built-in safety. Memory management and correctness rely entirely on programmer discipline, and undefined behavior is part of the language model.
+C++ builds on C by introducing abstractions such as RAII, templates, and standard containers. Safer programming patterns exist, but unsafe operations remain valid, making safety largely optional and convention-based.
 
-- **C++** builds on C by introducing powerful abstractions such as RAII, templates, and standard containers. Safer patterns exist, but unsafe operations remain valid, making safety largely optional.
+Rust enforces memory safety and data-race freedom at compile time through ownership, borrowing, and lifetimes, while still targeting systems-level performance without garbage collection.
 
-- **Rust** enforces memory safety and data-race freedom at compile time through ownership, borrowing, and lifetimes, while still targeting systems-level performance without garbage collection.
+Code Examples (Report – Part 2)
 
----
+The practical examples highlight key language-level trade-offs:
 
-## Code Examples (Part 2)
+Memory management
+Manual allocation (malloc/free) vs. RAII vs. ownership-based cleanup
 
-The practical examples illustrate key differences across the three languages:
+Pointer usage
+Unrestricted pointer arithmetic vs. safer container access vs. borrowing rules
 
-- **Memory management:**
-  Manual allocation (`malloc/free`) vs. RAII vs. ownership-based cleanup
+Error handling
+Return codes vs. exceptions vs. Result / Option
 
-- **Pointer usage:**
-  Unrestricted pointer arithmetic vs. safer container access vs. borrowing rules
+Abstraction mechanisms
+Macros vs. templates vs. generics and traits
 
-- **Error handling:**
-  Return codes vs. exceptions vs. `Result` / `Option`
+All examples are intentionally minimal to emphasize language semantics, not application logic.
 
-- **Abstraction mechanisms:**
-  Macros vs. templates vs. generics and traits
+AI Usage and Verification Methodology
 
-All examples are intentionally minimal to highlight the language-level trade-offs.
+AI was used as a support tool during the development of this project to assist with:
 
----
+Structuring the theoretical analysis
 
-## AI Prompting and Verification (Part 3)
+Producing comparative explanations
 
-AI was used as a **support tool** during the development of this project to:
+Generating minimal illustrative code examples
 
-- Structure the theoretical analysis
-- Generate comparative explanations
-- Produce minimal illustrative code examples
+All AI-generated content was manually reviewed, corrected, and validated.
 
-All AI-generated content was **manually reviewed and validated**.
+Verification methodology included:
 
-### Verification methodology included:
+C
+Manual auditing for undefined behavior (use-after-free, invalid pointer arithmetic, missing error checks)
 
-- **C:** manual auditing for undefined behavior (use-after-free, invalid pointer arithmetic, uninitialized reads)
-- **C++:** use of modern idioms (RAII, standard containers, bounds-checked access)
-- **Rust:** reliance on compiler-enforced guarantees in safe Rust (no `unsafe` blocks)
+C++
+Use of modern idioms (RAII, standard containers, smart pointers) and explicit discussion of remaining unsafe cases
 
-By combining manual inspection, modern best practices, and compiler guarantees, the project ensures that both explanations and code accurately reflect real-world systems programming behavior.
+Rust
+Reliance on compiler-enforced guarantees in safe Rust, with no use of unsafe blocks
 
-Detailed documentation of AI prompts and validation methodology is provided in the accompanying project report.
-```
+This approach ensures that both the explanations and the code accurately reflect real-world systems programming behavior, consistent with the accompanying report.
+
+Report
+
+The full theoretical analysis and discussion of design trade-offs is provided in the project report:
+
+📄 C12_Report.pdf
+
+Final Notes
+
+This project is intended as an educational comparison, demonstrating how language design choices influence safety, control, and correctness in systems programming.
