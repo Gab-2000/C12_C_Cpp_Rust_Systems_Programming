@@ -27,13 +27,14 @@ code/
 └── 🦀 rust/       # Ownership, borrowing, lifetimes, Result/Option
 ```
 
-| Feature            | C (The Pointer)          | C++ (The Abstraction)  | Rust (The Safety)              |
-| :----------------- | :----------------------- | :--------------------- | :----------------------------- |
-| **Memory Mgmt**    | Manual (`malloc`/`free`) | RAII & Smart Pointers  | Ownership & Lifetimes          |
-| **Error Handling** | Return Codes             | Exceptions (Try/Catch) | Functional (`Result`/`Option`) |
-| **Safety**         | High Risk (UB)           | Optional Safety        | Guaranteed Safety (Safe Rust)  |
+## 🔍 Language Comparison Summary
 
----
+| Feature            | C                        | C++                      | Rust                      |
+| :----------------- | :----------------------- | :----------------------- | :------------------------ |
+| **Abstraction**    | Minimal (Macros/Structs) | High (Classes/Templates) | Strict (Traits/Generics)  |
+| **Error Handling** | Return Codes             | Exceptions (Try/Catch)   | Algebraic (Result/Option) |
+| **Pointers**       | Raw Pointers (Unsafe)    | Smart Pointers (Safer)   | References (Borrowing)    |
+| **Memory**         | Manual (`malloc`/`free`) | RAII (Destructors)       | Ownership & Lifetimes     |
 
 ## 📄 Documentation
 
